@@ -28,7 +28,7 @@ public class Trick : ScriptableObject
         {
             if(Vector2.Distance(inputs[currentEvaluationIndex], waypoint) <= trickMargin)
             {
-                Debug.Log(inputs[currentEvaluationIndex]);
+                // Debug.Log(inputs[currentEvaluationIndex]);
                 trickEvaluated = true;
             }
             else 
@@ -48,7 +48,7 @@ public class Trick : ScriptableObject
         }
         else
         {
-            Debug.Log("Did not trigger " + animationClip.name);
+            // Debug.Log("Did not trigger " + animationClip.name);
         }
     }
 
@@ -56,7 +56,7 @@ public class Trick : ScriptableObject
     {
         return animationClip;
     }
-    public int GetScore()
+    public int TrickScore()
     {
         return scoreValue;
     }

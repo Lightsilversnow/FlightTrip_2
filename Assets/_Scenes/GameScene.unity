@@ -10602,7 +10602,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnInputUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 729512099}
+      objectReference: {fileID: 0}
     - target: {fileID: 6900553848399086580, guid: 33e0ee18e5897493a8ab4d5e260f12f4,
         type: 3}
       propertyPath: OnInputUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -10645,18 +10645,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33e0ee18e5897493a8ab4d5e260f12f4, type: 3}
---- !u!114 &729512099 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -1265965757471940737, guid: 33e0ee18e5897493a8ab4d5e260f12f4,
-    type: 3}
-  m_PrefabInstance: {fileID: 729512098}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e2fe2f92a23431458f34b80889bb5b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &780609680
 GameObject:
   m_ObjectHideFlags: 0
@@ -31882,7 +31870,7 @@ MonoBehaviour:
   OnInputUpdate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 729512099}
+      - m_Target: {fileID: 1821420314}
         m_TargetAssemblyTypeName: InputHandler, Assembly-CSharp
         m_MethodName: OnInputGiven
         m_Mode: 0
@@ -31909,6 +31897,81 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1821420311 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100154, guid: 33e0ee18e5897493a8ab4d5e260f12f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 729512098}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1821420314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821420311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2fe2f92a23431458f34b80889bb5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  averageBufferSize: 10
+  inputs: []
+  sendCleanedInput:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 657432045}
+        m_TargetAssemblyTypeName: PlaneMovement, Assembly-CSharp
+        m_MethodName: UpdatePosition
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 780609682}
+        m_TargetAssemblyTypeName: CursorMovement, Assembly-CSharp
+        m_MethodName: UpdatePosition
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1821420315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821420311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db2f43c609e96ac42bbf1e07b97f1f10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCOM: {x: 0, y: 0}
+  OnInputUpdate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2038050821
 GameObject:
   m_ObjectHideFlags: 0

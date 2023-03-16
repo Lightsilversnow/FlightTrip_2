@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour, IDataPersistence
     [SerializeField]
     int equationsFinished = 0;
     [SerializeField]
+    int answerStreak = 0;
+    [SerializeField]
     float timeToNextWaypoint = 0f;
 
     [Header("Set Up")]
@@ -161,8 +163,10 @@ public class GameManager : MonoBehaviour, IDataPersistence
     }
     public void AddScoreEntry(ScoreEntry entry)
     {
+        entry.answerStreak = answerStreak;
         session.AddEntry(entry);
         updateScore.Invoke(session.GetScore());
+        answerStreak = entry.GetAnswerStreak();
     }
     public void AddTrickScore(string trickName, int score)
     {

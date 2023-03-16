@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 400154}
   - component: {fileID: 11400000}
-  - component: {fileID: 6900553848399086580}
-  - component: {fileID: -1265965757471940737}
+  - component: {fileID: 2401854822576399896}
+  - component: {fileID: 352414533516223184}
   m_Layer: 0
   m_Name: Wii
   m_TagString: Untagged
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dba9559d80dc84c2f92d7aa30050c217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6900553848399086580
+--- !u!114 &2401854822576399896
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62,7 +62,7 @@ MonoBehaviour:
   OnInputUpdate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -1265965757471940737}
+      - m_Target: {fileID: 352414533516223184}
         m_TargetAssemblyTypeName: InputHandler, Assembly-CSharp
         m_MethodName: OnInputGiven
         m_Mode: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &-1265965757471940737
+--- !u!114 &352414533516223184
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

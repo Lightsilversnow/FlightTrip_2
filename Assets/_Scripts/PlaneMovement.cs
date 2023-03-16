@@ -93,7 +93,7 @@ public class PlaneMovement : MonoBehaviour
     public void DoTrick(Trick trick)
     {
         doTrick.Invoke(trick.GetAnimationClip());
-        addTrickScore.Invoke(trick.name, trick.GetScore());
+        addTrickScore.Invoke(trick.name, trick.TrickScore());
         allowedToDoTrick = false;
         Invoke("EnableTricksAgain", trick.GetAnimationClip().length); //Cooldown is equal to the length of the animation
     }

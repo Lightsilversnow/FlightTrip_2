@@ -27,7 +27,7 @@ public class MouseInputHandler : MonoBehaviour
         float xInput = (rawMousePosition.x - screenWidth / 2) / screenWidth * 2;
         float yInput = (rawMousePosition.y - screenHeight / 2) / screenHeight * 2;
         Vector2 input = new Vector2(xInput, yInput);
-        Debug.Log(input);
+        // Debug.Log(input);
         currentCOM = input;
         OnInputUpdate.Invoke(currentCOM);
     }

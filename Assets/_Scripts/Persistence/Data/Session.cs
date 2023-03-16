@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 [Serializable]
 public class Session
@@ -22,6 +23,10 @@ public class Session
     List<ScoreEntry> scoreEntries;
     [SerializeField]
     List<TrickScore> trickScores;
+    int score = 0;
+    public int answerStreak = 0;
+
+
 
     public int NumberOfEquations { get => numberOfEquations; set => numberOfEquations = value; }
     public List<int> Bases { get => bases; set => bases = value; }
@@ -65,12 +70,14 @@ public class Session
 
     public int GetScore()
     {
-        int score = 0;
-        foreach(ScoreEntry entry in scoreEntries)
-        {
-            score += entry.GetScore();
-        }
-        foreach(TrickScore trickScore in trickScores)
+        ScoreEntry entry = scoreEntries.Last();
+        score += entry.GetScore();
+
+        //foreach(ScoreEntry entry in scoreEntries)
+        //{
+        //   score += entry.GetScore();
+        //}
+        foreach (TrickScore trickScore in trickScores)
         {
             score += trickScore.score;
         }

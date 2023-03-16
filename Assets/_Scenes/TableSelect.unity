@@ -2935,6 +2935,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wii
       objectReference: {fileID: 0}
+    - target: {fileID: 100154, guid: 33e0ee18e5897493a8ab4d5e260f12f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400154, guid: 33e0ee18e5897493a8ab4d5e260f12f4, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2983,7 +2987,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnInputUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 708753951}
+      objectReference: {fileID: 0}
     - target: {fileID: 6900553848399086580, guid: 33e0ee18e5897493a8ab4d5e260f12f4,
         type: 3}
       propertyPath: OnInputUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -2991,18 +2995,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33e0ee18e5897493a8ab4d5e260f12f4, type: 3}
---- !u!114 &708753951 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -1265965757471940737, guid: 33e0ee18e5897493a8ab4d5e260f12f4,
-    type: 3}
-  m_PrefabInstance: {fileID: 708753950}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e2fe2f92a23431458f34b80889bb5b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &784178989
 GameObject:
   m_ObjectHideFlags: 0
@@ -6569,7 +6561,6 @@ MonoBehaviour:
   speedModifier: 2
   clickTolerance: 0.01
   rectTransform: {fileID: 1819161461}
-  parentCanvas: {fileID: 1182671169}
   OnAllowClick:
     m_PersistentCalls:
       m_Calls:
