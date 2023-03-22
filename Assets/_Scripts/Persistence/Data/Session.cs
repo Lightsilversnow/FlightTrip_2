@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using TMPro;
+using UnityEngine.SocialPlatforms.Impl;
 
 [Serializable]
 public class Session
@@ -24,9 +26,6 @@ public class Session
     [SerializeField]
     List<TrickScore> trickScores;
     int score = 0;
-    public int answerStreak = 0;
-
-
 
     public int NumberOfEquations { get => numberOfEquations; set => numberOfEquations = value; }
     public List<int> Bases { get => bases; set => bases = value; }
@@ -72,6 +71,7 @@ public class Session
     {
         ScoreEntry entry = scoreEntries.Last();
         score += entry.GetScore();
+
 
         //foreach(ScoreEntry entry in scoreEntries)
         //{

@@ -1,10 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.SocialPlatforms.Impl;
 
 [System.Serializable]
 public class ScoreEntry
 {
+    TrailColour trailColour;
+    RingScoreUI scoreUI;
+
+    public GameObject WingTrail;
     public Equation equation;
     public int answer;
     public float accuracy;
@@ -22,32 +29,32 @@ public class ScoreEntry
         return answerStreak;
     }
 
+
     public int GetScore()
     {
         //you always get 10 points
         int score = 10;
 
         //get 10 points for correct answer
-        Debug.Log("answer " + equation.GetCorrectAnswer());
-        Debug.Log("our answer " + answer);
         if (equation.GetCorrectAnswer() == answer)
             {
                 score += 10;
-                Debug.Log("test " + answerStreak);
-
                 if (answerStreak <5)
                 {
                     answerStreak++;
-                    Debug.Log("correct answer");
-                    Debug.Log(answerStreak);
-
-                }
+                    trailColour = GameObject.Find("WingTrail").GetComponent<TrailColour>();
+                    trailColour.ChangeTrailColour(answerStreak);
+                    scoreUI = GameObject.Find("RingScoreUIMover").GetComponent<RingScoreUI>();
+                    scoreUI.ShowRingScorePos(score);
+            }
             }
         else if (equation.GetCorrectAnswer() != answer)
         {
             answerStreak = 0;
-            Debug.Log("you answered wrongly");
-            Debug.Log("should be zero " + answerStreak);
+            trailColour = GameObject.Find("WingTrail").GetComponent<TrailColour>();
+            trailColour.ChangeTrailColour(answerStreak);
+            scoreUI = GameObject.Find("RingScoreUIMover").GetComponent<RingScoreUI>();
+            scoreUI.ShowRingScoreNeg(score);
 
         }
 
@@ -57,6 +64,7 @@ public class ScoreEntry
        // score += Mathf.FloorToInt(accuracy * 10);
         
         Debug.Log("this is the score " + score);
+
 
         return score;
     }

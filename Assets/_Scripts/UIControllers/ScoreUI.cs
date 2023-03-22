@@ -18,5 +18,13 @@ public class ScoreUI : MonoBehaviour
     public void UpdateScoreUI(int score)
     {
         scoreUI.text = "SCORE " + score;
+        GetComponent<Animator>().SetBool("ScoreGotten", true);
+        Invoke("ScoreGottenFalse", 1);
+
+    }
+
+    public void ScoreGottenFalse()
+    {
+        GetComponent<Animator>().SetBool("ScoreGotten", false);
     }
 }
