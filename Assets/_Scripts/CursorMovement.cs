@@ -51,15 +51,15 @@ public class CursorMovement : MonoBehaviour
         {
             canInvokeClick = false;
             float distance = Vector2.Distance(previousPos, currentPos);
-            Debug.Log("Last difference in distance: " + distance);
+           // Debug.Log("Last difference in distance: " + distance);
             if (distance < clickTolerance)
             {
-                Debug.Log("Clicky clicky");
+                //Debug.Log("Clicky clicky");
                 AllowClick();
             }
             else
             {
-                Debug.Log("No clicky clicky");
+                //Debug.Log("No clicky clicky");
                 DisallowClick();
             }
         }

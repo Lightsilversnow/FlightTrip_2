@@ -42,7 +42,7 @@ public class CursorInput : MonoBehaviour
             //Raycast using the Graphics Raycaster and simulated mouse click position
             EventSystem.current.RaycastAll(pointerEventData, results);
 
-            if (results.Count > 0) Debug.Log("Hit " + results[0].gameObject.name);
+            //if (results.Count > 0) Debug.Log("Hit " + results[0].gameObject.name);
             foreach(RaycastResult result in results)
             {
                 if (result.gameObject?.GetComponent<Button>())
