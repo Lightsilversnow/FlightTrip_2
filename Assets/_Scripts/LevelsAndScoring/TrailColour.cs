@@ -11,23 +11,26 @@ public class TrailColour : MonoBehaviour
     public float aFloat;
     //0 to 1
 
-    public ParticleSystem myparticleSystem;
-    public Material myMaterial;
-    public Renderer myRenderer;
+    //public ParticleSystem myparticleSystem;
+    //public Material myMaterial;
+    //public Renderer myRenderer;
+
+    public Material[] materials; 
 
 
     void Start ()
     {
         aFloat = 1;
-        myparticleSystem = GetComponent<ParticleSystem>();
-        myMaterial = GetComponent<Material>();
-        myRenderer = GetComponent<Renderer>();
+        //myparticleSystem = GetComponent<ParticleSystem>();
+        //myMaterial = GetComponent<Material>();
+        //myRenderer = GetComponent<Renderer>();
+        materials = GetComponent<Renderer>().materials;
 
     }
 
     public void ChangeTrailColour(int answerStreak)
     {
-        var main = myparticleSystem.main;
+        //var main = myparticleSystem.main;
 
         if (answerStreak == 0)
         {
@@ -73,11 +76,11 @@ public class TrailColour : MonoBehaviour
         }
 
         myColor = new Color(rFloat, gFloat, bFloat, aFloat);
-        main.startColor= myColor;
-        myMaterial.color= myColor;
-        myRenderer.material.color = myColor;
-
-
+        //main.startColor= myColor;
+        //myMaterial.color= myColor;
+        //myRenderer.material.color = myColor;
+        materials[0].color = myColor;
+        materials[1].color = myColor;
     }
 }
 

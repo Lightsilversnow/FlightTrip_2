@@ -96,7 +96,7 @@ public class Player : MonoBehaviour
                 break;
             default:
                 distanceToCenterOfRing = float.MaxValue;
-                Debug.Log("You're exactly in the middle, that's not good");
+                //Debug.Log("You're exactly in the middle, that's not good");
                 break;
         }
         if(distanceToCenterOfRing != float.MaxValue)

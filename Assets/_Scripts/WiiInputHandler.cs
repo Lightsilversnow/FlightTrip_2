@@ -13,7 +13,7 @@ public class WiiInputHandler : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 input = Wii.GetCenterOfBalance(0); //Change this if you want a different source of COG input than WiiBuddy
+        Vector3 input = Wii.GetWiimoteAcceleration(0); //Change this if you want a different source of COG input than WiiBuddy
         currentCOM = input;
         //currentCOM = Vector2.Lerp(currentCOM, input, 0.9f * Time.deltaTime);
         OnInputUpdate.Invoke(currentCOM);

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class RingScoreUI : MonoBehaviour
@@ -18,6 +19,7 @@ public class RingScoreUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI m_textProUGUI;
     [SerializeField] private bool fadeIn = false;
     [SerializeField] private bool fadeOut = false;
+
 
     private void Update()
     {
@@ -45,7 +47,9 @@ public class RingScoreUI : MonoBehaviour
         m_textProUGUI.color = Color.green;
         m_textProUGUI.text = currentScore.ToString();
         Vector2 anchoredPos;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(m_parent, Input.mousePosition, m_canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null: m_uiCamera, out anchoredPos);
+        Vector3 planePos = GameObject.Find("Airplane_1354").transform.position;
+        Vector3 planeCanvasPos = m_uiCamera.WorldToScreenPoint(planePos);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(m_parent, planeCanvasPos, m_canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null: m_uiCamera, out anchoredPos);
         m_text.anchoredPosition = anchoredPos;
         ShowUI();
         Invoke("HideUI", (float)0.5);
@@ -57,7 +61,9 @@ public class RingScoreUI : MonoBehaviour
         m_textProUGUI.color = Color.red;
         m_textProUGUI.text = currentScore.ToString();
         Vector2 anchoredPos;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(m_parent, Input.mousePosition, m_canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : m_uiCamera, out anchoredPos);
+        Vector3 planePos = GameObject.Find("Airplane_1354").transform.position;
+        Vector3 planeCanvasPos = m_uiCamera.WorldToScreenPoint(planePos);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(m_parent, planeCanvasPos, m_canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : m_uiCamera, out anchoredPos);
         m_text.anchoredPosition = anchoredPos;
         ShowUI();
         Invoke("HideUI", (float)0.5);

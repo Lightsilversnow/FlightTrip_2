@@ -44,6 +44,11 @@ public class ScoreEntry
                     answerStreak++;
                     trailColour = GameObject.Find("WingTrail").GetComponent<TrailColour>();
                     trailColour.ChangeTrailColour(answerStreak);
+                trailColour.ChangeTrailColour(answerStreak);
+                trailColour.ChangeTrailColour(answerStreak);
+                trailColour.ChangeTrailColour(answerStreak);
+
+                score += Mathf.FloorToInt(accuracy * 10);
                     scoreUI = GameObject.Find("RingScoreUIMover").GetComponent<RingScoreUI>();
                     scoreUI.ShowRingScorePos(score);
             }
@@ -53,6 +58,7 @@ public class ScoreEntry
             answerStreak = 0;
             trailColour = GameObject.Find("WingTrail").GetComponent<TrailColour>();
             trailColour.ChangeTrailColour(answerStreak);
+            score += Mathf.FloorToInt(accuracy * 10);
             scoreUI = GameObject.Find("RingScoreUIMover").GetComponent<RingScoreUI>();
             scoreUI.ShowRingScoreNeg(score);
 
@@ -61,7 +67,6 @@ public class ScoreEntry
         //get 10 points for going through the ring
         //get 0 to 9 extra points for going through the ring other than the center
         //get 10 extra points for going through the center
-       // score += Mathf.FloorToInt(accuracy * 10);
         
         Debug.Log("this is the score " + score);
 

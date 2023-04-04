@@ -2547,7 +2547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100154, guid: 33e0ee18e5897493a8ab4d5e260f12f4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400154, guid: 33e0ee18e5897493a8ab4d5e260f12f4, type: 3}
       propertyPath: m_RootOrder
@@ -2592,6 +2592,41 @@ PrefabInstance:
     - target: {fileID: 400154, guid: 33e0ee18e5897493a8ab4d5e260f12f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 352414533516223184, guid: 33e0ee18e5897493a8ab4d5e260f12f4,
+        type: 3}
+      propertyPath: sendCleanedInput.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 352414533516223184, guid: 33e0ee18e5897493a8ab4d5e260f12f4,
+        type: 3}
+      propertyPath: sendCleanedInput.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 352414533516223184, guid: 33e0ee18e5897493a8ab4d5e260f12f4,
+        type: 3}
+      propertyPath: sendCleanedInput.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1396214220}
+    - target: {fileID: 352414533516223184, guid: 33e0ee18e5897493a8ab4d5e260f12f4,
+        type: 3}
+      propertyPath: sendCleanedInput.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 352414533516223184, guid: 33e0ee18e5897493a8ab4d5e260f12f4,
+        type: 3}
+      propertyPath: sendCleanedInput.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdatePosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 352414533516223184, guid: 33e0ee18e5897493a8ab4d5e260f12f4,
+        type: 3}
+      propertyPath: sendCleanedInput.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CursorMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 352414533516223184, guid: 33e0ee18e5897493a8ab4d5e260f12f4,
+        type: 3}
+      propertyPath: sendCleanedInput.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6900553848399086580, guid: 33e0ee18e5897493a8ab4d5e260f12f4,
         type: 3}

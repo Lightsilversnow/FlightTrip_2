@@ -34,6 +34,9 @@ public class PlaneMovement : MonoBehaviour
     UnityEvent<string, int> addTrickScore;
     [SerializeField]
     List<Trick> possibleTricks;
+
+    public Vector3 localPos;
+
     //add other event triggers for tricks here
 
     private void Awake()
@@ -54,7 +57,7 @@ public class PlaneMovement : MonoBehaviour
             inputBuffer.Add(pos);
             //calculate screen position
             int invert = invertYAxis ? -1 : 1;
-            Vector3 localPos = new Vector3(pos.x * verticalBounds * screenAspect,
+            localPos = new Vector3(pos.x * verticalBounds * screenAspect,
                 pos.y * verticalBounds * invert,
                 transform.localPosition.z);
 
