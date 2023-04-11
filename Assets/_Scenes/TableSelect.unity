@@ -6590,7 +6590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenAspect: 0
-  invertYAxis: 0
+  invertYAxis: 1
   verticalBounds: 500
   horizontalBounds: 0
   speedModifier: 2

@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2fe2f92a23431458f34b80889bb5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  averageBufferSize: 10
+  averageBufferSize: 20
   inputs: []
   sendCleanedInput:
     m_PersistentCalls:

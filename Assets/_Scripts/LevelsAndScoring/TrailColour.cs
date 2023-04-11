@@ -15,7 +15,7 @@ public class TrailColour : MonoBehaviour
     //public Material myMaterial;
     //public Renderer myRenderer;
 
-    public Material[] materials; 
+    [SerializeField] Material[] materials; 
 
 
     void Start ()

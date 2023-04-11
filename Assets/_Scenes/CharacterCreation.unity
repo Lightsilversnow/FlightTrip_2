@@ -3953,8 +3953,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenAspect: 0
-  invertYAxis: 0
-  verticalBounds: 300
+  invertYAxis: 1
+  verticalBounds: 500
   horizontalBounds: 0
   speedModifier: 2
   clickTolerance: 0.01
@@ -3990,7 +3990,7 @@ MonoBehaviour:
   allowedToClick: 0
   uiMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 32
   eventSystem: {fileID: 1477322754}
   rectTransform: {fileID: 1396214219}
 --- !u!114 &1396214222
