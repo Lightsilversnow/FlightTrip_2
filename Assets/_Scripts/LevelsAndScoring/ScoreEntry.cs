@@ -39,35 +39,33 @@ public class ScoreEntry
         if (equation.GetCorrectAnswer() == answer)
             {
                 score += 10;
-                if (answerStreak <5)
-                {
-                    answerStreak++;
-                    GameObject[] wingtrail = GameObject.FindGameObjectsWithTag("WingTrail");
-                    trailColour = new TrailColour[wingtrail.Length];
-                    for (int i = 0; i < wingtrail.Length; ++i)
+
+                GameObject[] wingtrail = GameObject.FindGameObjectsWithTag("WingTrail");
+                trailColour = new TrailColour[wingtrail.Length];
+                for (int i = 0; i < wingtrail.Length; ++i)
                     {
                         trailColour[i] = wingtrail[i].GetComponent<TrailColour>();
-                        trailColour[i].ChangeTrailCorrectColour(answerStreak);
+                        trailColour[i].ChangeTrailCorrectColour();
                     }
-                }
-            SoundEffects soundEffects = GameObject.Find("AnswerEffects").GetComponent<SoundEffects>();
-            soundEffects.correctSound();
-            score += Mathf.FloorToInt(accuracy * 10);
-            scoreUI = GameObject.Find("RingScoreUIMover").GetComponent<RingScoreUI>();
-            scoreUI.ShowRingScorePos(score);
+
+                SoundEffects soundEffects = GameObject.Find("AnswerEffects").GetComponent<SoundEffects>();
+                soundEffects.correctSound();
+
+                //score += Mathf.FloorToInt(accuracy * 10);
+                scoreUI = GameObject.Find("RingScoreUIMover").GetComponent<RingScoreUI>();
+                scoreUI.ShowRingScorePos(score);
         }
         else if (equation.GetCorrectAnswer() != answer)
         {
-            answerStreak = 0;
             GameObject[] wingtrail = GameObject.FindGameObjectsWithTag("WingTrail");
             trailColour = new TrailColour[wingtrail.Length];
             for (int i = 0; i < wingtrail.Length; ++i)
             {
                 trailColour[i] = wingtrail[i].GetComponent<TrailColour>();
-                trailColour[i].ChangeTrailWrongColour(answerStreak);
+                trailColour[i].ChangeTrailWrongColour();
             }
 
-            score += Mathf.FloorToInt(accuracy * 10);
+            //score += Mathf.FloorToInt(accuracy * 10);
             scoreUI = GameObject.Find("RingScoreUIMover").GetComponent<RingScoreUI>();
             scoreUI.ShowRingScoreNeg(score);
 

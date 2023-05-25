@@ -10,6 +10,8 @@ using UnityEngine.UI;
 
 public class TutorialUI : MonoBehaviour
 {
+    public TrailColour[] trailColour;
+
     public AudioSource correct;
     public AudioSource wrong;
 
@@ -324,6 +326,29 @@ public class TutorialUI : MonoBehaviour
             }
         }
     }
+
+    public void wrongAnswer()
+    {
+        wrong.Play();
+        GameObject[] wingtrail = GameObject.FindGameObjectsWithTag("WingTrail");
+        trailColour = new TrailColour[wingtrail.Length];
+        for (int i = 0; i < wingtrail.Length; ++i)
+        {
+            trailColour[i] = wingtrail[i].GetComponent<TrailColour>();
+            trailColour[i].ChangeTrailWrongColour();
+        }
+    }
+
+    public void correctAnswer()
+    {
+        GameObject[] wingtrail = GameObject.FindGameObjectsWithTag("WingTrail");
+        trailColour = new TrailColour[wingtrail.Length];
+        for (int i = 0; i < wingtrail.Length; ++i)
+        {
+            trailColour[i] = wingtrail[i].GetComponent<TrailColour>();
+            trailColour[i].ChangeTrailCorrectColour();
+        }
+    }
     
     public void flyLeft()
     {
@@ -399,6 +424,7 @@ public class TutorialUI : MonoBehaviour
     {
         group = "tableTen";
         correct.Play();
+        correctAnswer();
         HideUI();
         ShowUI();
 
@@ -408,6 +434,7 @@ public class TutorialUI : MonoBehaviour
     {
         group = "tableFive";
         correct.Play();
+        correctAnswer();
         HideUI();
         ShowUI();
     }
@@ -416,6 +443,7 @@ public class TutorialUI : MonoBehaviour
     {
         group = "endTutorial";
         correct.Play();
+        correctAnswer();
         HideUI();
         ShowUI();
 

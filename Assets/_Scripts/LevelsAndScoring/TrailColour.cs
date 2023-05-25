@@ -74,7 +74,7 @@ public class TrailColour : MonoBehaviour
         materials[1].color = myColor;
     }*/
 
-    public void ChangeTrailCorrectColour(int answerStreak)
+    public void ChangeTrailCorrectColour()
     {
         rFloat = 0f;
         gFloat = 1f;
@@ -86,7 +86,7 @@ public class TrailColour : MonoBehaviour
         materials[1].color = myColor;
     }
 
-    public void ChangeTrailWrongColour(int answerStreak)
+    public void ChangeTrailWrongColour()
     {
 
         rFloat = 1f;
