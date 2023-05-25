@@ -15,6 +15,8 @@ public class TitleScreenController : MonoBehaviour, IDataPersistence
     Button startGameButton;
     [SerializeField]
     Button instructionsButton;
+    [SerializeField]
+    Button tutorialButton;
 
     [Header("ScreenText")]
     [SerializeField]
@@ -52,6 +54,7 @@ public class TitleScreenController : MonoBehaviour, IDataPersistence
         startGameButton.interactable = status;
         characterCreationButton.interactable = status;
         instructionsButton.interactable = status;
+        tutorialButton.interactable = status;
     }
 
     public void LoadData(GameData gameData)

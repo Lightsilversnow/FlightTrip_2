@@ -11,9 +11,6 @@ public class TrailColour : MonoBehaviour
     public float aFloat;
     //0 to 1
 
-    //public ParticleSystem myparticleSystem;
-    //public Material myMaterial;
-    //public Renderer myRenderer;
 
     [SerializeField] Material[] materials; 
 
@@ -21,16 +18,13 @@ public class TrailColour : MonoBehaviour
     void Start ()
     {
         aFloat = 1;
-        //myparticleSystem = GetComponent<ParticleSystem>();
-        //myMaterial = GetComponent<Material>();
-        //myRenderer = GetComponent<Renderer>();
         materials = GetComponent<Renderer>().materials;
 
     }
 
-    public void ChangeTrailColour(int answerStreak)
+    //booster wingtrail, wasn't noticed by children, so changed into green for cor answer and red for wrong answer
+    /*public void ChangeTrailColour(int answerStreak)
     {
-        //var main = myparticleSystem.main;
 
         if (answerStreak == 0)
         {
@@ -76,9 +70,31 @@ public class TrailColour : MonoBehaviour
         }
 
         myColor = new Color(rFloat, gFloat, bFloat, aFloat);
-        //main.startColor= myColor;
-        //myMaterial.color= myColor;
-        //myRenderer.material.color = myColor;
+        materials[0].color = myColor;
+        materials[1].color = myColor;
+    }*/
+
+    public void ChangeTrailCorrectColour(int answerStreak)
+    {
+        rFloat = 0f;
+        gFloat = 1f;
+        bFloat = 0f;
+        aFloat = 1;
+
+        myColor = new Color(rFloat, gFloat, bFloat, aFloat);
+        materials[0].color = myColor;
+        materials[1].color = myColor;
+    }
+
+    public void ChangeTrailWrongColour(int answerStreak)
+    {
+
+        rFloat = 1f;
+        gFloat = 0f;
+        bFloat = 0f;
+        aFloat = 1;
+
+        myColor = new Color(rFloat, gFloat, bFloat, aFloat);
         materials[0].color = myColor;
         materials[1].color = myColor;
     }

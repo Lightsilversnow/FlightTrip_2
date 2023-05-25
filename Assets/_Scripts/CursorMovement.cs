@@ -54,7 +54,7 @@ public class CursorMovement : MonoBehaviour
            // Debug.Log("Last difference in distance: " + distance);
             if (distance < clickTolerance)
             {
-                //Debug.Log("Clicky clicky");
+                Debug.Log("Clicky clicky");
                 AllowClick();
             }
             else

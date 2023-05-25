@@ -165,7 +165,6 @@ public class Player : MonoBehaviour
         {
             ring.gameObject.SetActive(false);
         }
-        Debug.Log("how many times?");
         //ShowScore();
     }
     public void HideEquation()

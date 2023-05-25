@@ -45,7 +45,7 @@ public class RingScoreUI : MonoBehaviour
     {
         int currentScore = score;
         m_textProUGUI.color = Color.green;
-        m_textProUGUI.text = currentScore.ToString();
+        m_textProUGUI.text = "+" + currentScore.ToString();
         Vector2 anchoredPos;
         Vector3 planePos = GameObject.Find("Airplane_1354").transform.position;
         Vector3 planeCanvasPos = m_uiCamera.WorldToScreenPoint(planePos);
@@ -59,7 +59,7 @@ public class RingScoreUI : MonoBehaviour
     {
         int currentScore = score;
         m_textProUGUI.color = Color.red;
-        m_textProUGUI.text = currentScore.ToString();
+        m_textProUGUI.text = "+" + currentScore.ToString();
         Vector2 anchoredPos;
         Vector3 planePos = GameObject.Find("Airplane_1354").transform.position;
         Vector3 planeCanvasPos = m_uiCamera.WorldToScreenPoint(planePos);

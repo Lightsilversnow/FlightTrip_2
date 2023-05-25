@@ -47,7 +47,7 @@ public class ScoreEntry
                     for (int i = 0; i < wingtrail.Length; ++i)
                     {
                         trailColour[i] = wingtrail[i].GetComponent<TrailColour>();
-                        trailColour[i].ChangeTrailColour(answerStreak);
+                        trailColour[i].ChangeTrailCorrectColour(answerStreak);
                     }
                 }
             SoundEffects soundEffects = GameObject.Find("AnswerEffects").GetComponent<SoundEffects>();
@@ -64,7 +64,7 @@ public class ScoreEntry
             for (int i = 0; i < wingtrail.Length; ++i)
             {
                 trailColour[i] = wingtrail[i].GetComponent<TrailColour>();
-                trailColour[i].ChangeTrailColour(answerStreak);
+                trailColour[i].ChangeTrailWrongColour(answerStreak);
             }
 
             score += Mathf.FloorToInt(accuracy * 10);
