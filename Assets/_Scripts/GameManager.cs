@@ -53,6 +53,8 @@ public class GameManager : MonoBehaviour, IDataPersistence
     [SerializeField]
     UnityEvent<bool> answerGiven;
 
+    [SerializeField] private GameObject Confetti;
+
     private void Start()
     {
         equationPoints = new Dictionary<CinemachineSmoothPath, List<EquationPoint>>();
@@ -176,6 +178,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
     }
     private void EndGame()
     {
+        Confetti.SetActive(true);
         dollyCart.m_Speed = 0;
         player.AddSessionData(session);
         gameEnded.Invoke();

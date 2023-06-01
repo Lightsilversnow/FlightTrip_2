@@ -7,6 +7,7 @@ TagManager:
   - GameMusic
   - WingTrail
   - Tutorial
+  - Confetti
   layers:
   - Default
   - TransparentFX

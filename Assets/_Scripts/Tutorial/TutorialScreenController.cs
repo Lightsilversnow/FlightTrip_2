@@ -31,6 +31,8 @@ public class TutorialScreenController : MonoBehaviour, IDataPersistence
     [SerializeField]
     UnityEvent gameEnded;
 
+    [SerializeField] private GameObject Confetti;
+
     private void Start()
     {
         equationPoints = new Dictionary<CinemachineSmoothPath, List<EquationPoint>>();
@@ -47,6 +49,7 @@ public class TutorialScreenController : MonoBehaviour, IDataPersistence
     
     public void EndGame()
     {
+        Confetti.SetActive(true);
         dollyCart.m_Speed = 0;
         player.AddSessionData(session);
         gameEnded.Invoke();
