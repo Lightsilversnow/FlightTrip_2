@@ -14,6 +14,10 @@ public class TutorialUI : MonoBehaviour
 
     public AudioSource correct;
     public AudioSource wrong;
+    public GameObject oldGameObject;
+    public CanvasGroup oldCanvasGroup;
+    public GameObject newGameObject;
+    public CanvasGroup newCanvasGroup;
 
 
     [SerializeField] private GameObject FlyLeft;
@@ -48,280 +52,27 @@ public class TutorialUI : MonoBehaviour
 
     private void Update()
     {
-        if (group == "right")
+
+        if (fadeIn)
         {
-            if (fadeIn)
+            newGameObject.SetActive(true);
+            newCanvasGroup.alpha = newCanvasGroup.alpha + (2 * Time.deltaTime);
+            if (newCanvasGroup.alpha == 1)
             {
-                FlyRight.SetActive(true);
-                groupRight.alpha = groupRight.alpha + (2 * Time.deltaTime) ;
-                if (groupRight.alpha == 1)
-                {
-                    fadeIn = false;
+                fadeIn = false;
 
-                }
-            }
-            if (fadeOut)
-            {
-                if (groupLeft.alpha >= 0)
-                {
-                    groupLeft.alpha = groupLeft.alpha - (2* Time.deltaTime);
-                    if (groupLeft.alpha == 0)
-                    {
-                        fadeOut = false;
-                        FlyLeft.SetActive(false);
-
-                    }
-                }
             }
         }
-
-        if (group == "top")
+        if (fadeOut)
         {
-            if (fadeIn)
+            if (oldCanvasGroup.alpha >= 0)
             {
-                FlyTop.SetActive(true);
-                groupTop.alpha += 2*Time.deltaTime;
-                if (groupTop.alpha == 1)
+                oldCanvasGroup.alpha = oldCanvasGroup.alpha - (2 * Time.deltaTime);
+                if (oldCanvasGroup.alpha == 0)
                 {
-                    fadeIn = false;
-                }
-            }
-            if (fadeOut)
-            {
-                if (groupRight.alpha >= 0)
-                {
-                    groupRight.alpha -= 2*Time.deltaTime;
-                    if (groupRight.alpha == 0)
-                    {
-                        fadeOut = false;
-                        FlyRight.SetActive(false);
-                    }
-                }
-            }
-        }
+                    fadeOut = false;
+                    oldGameObject.SetActive(false);
 
-        if (group == "bottom")
-        {
-            if (fadeIn)
-            {
-                FlyBottom.SetActive(true);
-                groupBottom.alpha += 2*Time.deltaTime;
-                if (groupBottom.alpha == 1)
-                {
-                    fadeIn = false;
-                }
-            }
-            if (fadeOut)
-            {
-                if (groupTop.alpha >= 0)
-                {
-                    groupTop.alpha -= 2*Time.deltaTime;
-                    if (groupTop.alpha == 0)
-                    {
-                        fadeOut = false;
-                        FlyTop.SetActive(false) ;
-                    }
-                }
-            }
-        }
-
-        if (group == "topRight")
-        {
-            if (fadeIn)
-            {
-                FlyTopRight.SetActive(true);
-                groupTopRight.alpha += 2*Time.deltaTime;
-                if (groupTopRight.alpha == 1)
-                {
-                    fadeIn = false;
-                }
-            }
-            if (fadeOut)
-            {
-                if (groupBottom.alpha >= 0)
-                {
-                    groupBottom.alpha -= 2*Time.deltaTime;
-                    if (groupBottom.alpha == 0)
-                    {
-                        fadeOut = false;
-                        FlyBottom.SetActive(false) ;
-                    }
-                }
-            }
-        }
-
-        if (group == "bottomLeft")
-        {
-            if (fadeIn)
-            {
-                FlyBottomLeft.SetActive(true);
-                groupBottomLeft.alpha += 2*Time.deltaTime;
-                if (groupBottomLeft.alpha == 1)
-                {
-                    fadeIn = false;
-                }
-            }
-            if (fadeOut)
-            {
-                if (groupTopRight.alpha >= 0)
-                {
-                    groupTopRight.alpha -= 2*Time.deltaTime;
-                    if (groupTopRight.alpha == 0)
-                    {
-                        fadeOut = false;
-                        FlyTopRight.SetActive(false);
-                    }
-                }
-            }
-        }
-
-        if (group == "topLeft")
-        {
-            if (fadeIn)
-            {
-                FlyTopLeft.SetActive(true);
-                groupTopLeft.alpha += 2*Time.deltaTime;
-                if (groupTopLeft.alpha == 1)
-                {
-                    fadeIn = false;
-                }
-            }
-            if (fadeOut)
-            {
-                if (groupBottomLeft.alpha >= 0)
-                {
-                    groupBottomLeft.alpha -= 2*Time.deltaTime;
-                    if (groupBottomLeft.alpha == 0)
-                    {
-                        fadeOut = false;
-                        FlyBottomLeft.SetActive(false);
-                    }
-                }
-            }
-        }
-
-        if (group == "bottomRight")
-        {
-            if (fadeIn)
-            {
-                FlyBottomRight.SetActive(true);
-                groupBottomRight.alpha += 2*Time.deltaTime;
-                if (groupBottomRight.alpha == 1)
-                {
-                    fadeIn = false;
-                }
-            }
-            if (fadeOut)
-            {
-                if (groupTopLeft.alpha >= 0)
-                {
-                    groupTopLeft.alpha -= 2*Time.deltaTime;
-                    if (groupTopLeft.alpha == 0)
-                    {
-                        fadeOut = false;
-                        FlyTopLeft.SetActive(false) ;
-                    }
-                }
-            }
-        }
-
-        if (group == "tableOne")
-        {
-            if (fadeIn)
-            {
-                FlyTableOne.SetActive(true);
-                groupTableOne.alpha += 2 * Time.deltaTime;
-                if (groupTableOne.alpha == 1)
-                {
-                    fadeIn = false;
-                }
-            }
-            if (fadeOut)
-            {
-                if (groupBottomRight.alpha >= 0)
-                {
-                    groupBottomRight.alpha -= 2 * Time.deltaTime;
-                    if (groupBottomRight.alpha == 0)
-                    {
-                        fadeOut = false;
-                        FlyBottomRight.SetActive(false);
-                    }
-                }
-            }
-        }
-
-        if (group == "tableTen")
-        {
-            if (fadeIn)
-            {
-                FlyTableTen.SetActive(true);
-                groupTableTen.alpha += 2 * Time.deltaTime;
-                if (groupTableTen.alpha == 1)
-                {
-                    fadeIn = false;
-                }
-            }
-            if (fadeOut)
-            {
-                if (groupTableOne.alpha >= 0)
-                {
-                    groupTableOne.alpha -= 2 * Time.deltaTime;
-                    if (groupTableOne.alpha == 0)
-                    {
-                        fadeOut = false;
-                        FlyTableOne.SetActive(false);
-                    }
-                }
-            }
-        }
-
-        if (group == "tableFive")
-        {
-            if (fadeIn)
-            {
-                FlyTableFive.SetActive(true);
-                groupTableFive.alpha += 2 * Time.deltaTime;
-                if (groupTableFive.alpha == 1)
-                {
-                    fadeIn = false;
-                }
-            }
-            if (fadeOut)
-            {
-                if (groupTableTen.alpha >= 0)
-                {
-                    groupTableTen.alpha -= 2 * Time.deltaTime;
-                    if (groupTableTen.alpha == 0)
-                    {
-                        fadeOut = false;
-                        FlyTableTen.SetActive(false);
-                    }
-                }
-            }
-        }
-
-
-        if (group == "endTutorial")
-        {
-            if (fadeIn)
-            {
-                FlyEnd.SetActive(true);
-                groupEndTutorial.alpha += 2*Time.deltaTime;
-                if (groupEndTutorial.alpha == 1)
-                {
-                    fadeIn = false;
-                }
-            }
-            if (fadeOut)
-            {
-                if (groupTableFive.alpha >= 0)
-                {
-                    groupTableFive.alpha -= 2*Time.deltaTime;
-                    if (groupTableFive.alpha == 0)
-                    {
-                        fadeOut = false;
-                        FlyTableFive.SetActive(false) ;
-                    }
                 }
             }
         }
@@ -352,7 +103,10 @@ public class TutorialUI : MonoBehaviour
     
     public void flyLeft()
     {
-        group = "right";
+        oldGameObject = FlyLeft;
+        oldCanvasGroup = groupLeft;
+        newGameObject = FlyRight;
+        newCanvasGroup = groupRight;
         correct.Play();
         HideUI();
         ShowUI();
@@ -361,7 +115,10 @@ public class TutorialUI : MonoBehaviour
 
     public void flyRight()
     {
-        group = "top";
+        oldGameObject = FlyRight;
+        oldCanvasGroup = groupRight;
+        newGameObject = FlyTop;
+        newCanvasGroup = groupTop;
         correct.Play();
         HideUI();
         ShowUI();
@@ -370,7 +127,10 @@ public class TutorialUI : MonoBehaviour
 
     public void flyTop()
     {
-        group = "bottom";
+        oldGameObject = FlyTop;
+        oldCanvasGroup = groupTop;
+        newGameObject = FlyBottom;
+        newCanvasGroup = groupBottom;
         correct.Play();
         HideUI();
         ShowUI();
@@ -379,7 +139,10 @@ public class TutorialUI : MonoBehaviour
 
     public void flyBottom()
     {
-        group = "topRight";
+        oldGameObject = FlyBottom;
+        oldCanvasGroup = groupBottom;
+        newGameObject = FlyTopRight;
+        newCanvasGroup = groupTopRight;
         correct.Play();
         HideUI();
         ShowUI();
@@ -387,7 +150,10 @@ public class TutorialUI : MonoBehaviour
 
     public void flyTopRight()
     {
-        group = "bottomLeft";
+        oldGameObject = FlyTopRight;
+        oldCanvasGroup = groupTopRight;
+        newGameObject = FlyBottomLeft;
+        newCanvasGroup = groupBottomLeft;
         correct.Play();
         HideUI();
         ShowUI();
@@ -396,7 +162,10 @@ public class TutorialUI : MonoBehaviour
 
     public void flyBottomLeft()
     {
-        group = "topLeft";
+        oldGameObject = FlyBottomLeft;
+        oldCanvasGroup = groupBottomLeft;
+        newGameObject = FlyTopLeft;
+        newCanvasGroup = groupTopLeft;
         correct.Play();
         HideUI();
         ShowUI();
@@ -405,15 +174,22 @@ public class TutorialUI : MonoBehaviour
 
     public void flyTopLeft()
     {
-        group = "bottomRight";
+        oldGameObject = FlyTopLeft;
+        oldCanvasGroup = groupTopLeft;
+        newGameObject = FlyBottomRight;
+        newCanvasGroup = groupBottomRight;
         correct.Play();
         HideUI();
         ShowUI();
 
     }
+
     public void flyBottomRight()
     {
-        group = "tableOne";
+        oldGameObject = FlyBottomRight;
+        oldCanvasGroup = groupBottomRight;
+        newGameObject = FlyTableOne;
+        newCanvasGroup = groupTableOne;
         correct.Play();
         HideUI();
         ShowUI();
@@ -422,7 +198,10 @@ public class TutorialUI : MonoBehaviour
 
     public void flyTableOne()
     {
-        group = "tableTen";
+        oldGameObject = FlyTableOne;
+        oldCanvasGroup = groupTableOne;
+        newGameObject = FlyTableTen;
+        newCanvasGroup = groupTableTen;
         correct.Play();
         correctAnswer();
         HideUI();
@@ -432,7 +211,10 @@ public class TutorialUI : MonoBehaviour
 
     public void flyTableTen()
     {
-        group = "tableFive";
+        oldGameObject = FlyTableTen;
+        oldCanvasGroup = groupTableTen;
+        newGameObject = FlyTableFive;
+        newCanvasGroup = groupTableFive;
         correct.Play();
         correctAnswer();
         HideUI();
@@ -441,7 +223,10 @@ public class TutorialUI : MonoBehaviour
 
     public void flyTableFive()
     {
-        group = "endTutorial";
+        oldGameObject = FlyTableFive;
+        oldCanvasGroup = groupTableFive;
+        newGameObject = FlyEnd;
+        newCanvasGroup = groupEndTutorial;
         correct.Play();
         correctAnswer();
         HideUI();
