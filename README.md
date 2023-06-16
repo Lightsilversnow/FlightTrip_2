@@ -2,11 +2,17 @@ I used Unity version 2021.3.8f1. You can download it here: https://unity.com/rel
 Because of limited space on Github you'll have to download the audio files yourself. Below you can see a list of the audio files and where you can download them.
 
 Music: https://freesound.org/people/Mrthenoronha/sounds/476548/
+
 Correct sound: https://freesound.org/people/Beetlemuse/sounds/587252/
+
 Wrong sound: https://freesound.org/people/Beetlemuse/sounds/587253/
+
 Seagulls: https://freesound.org/people/inchadney/sounds/437306/
+
 Wind: https://freesound.org/people/bashrambali/sounds/448196/
+
 Sea: https://freesound.org/people/straget/sounds/412308/
+
 Plane: https://freesound.org/people/JillianCallahan/sounds/12812/
 
 To open .kra files, you need to download and install Krita https://krita.org/en/download/krita-desktop/
